@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
-public class follow {
+public class Follow {
     private String word;
     private int count;
 
-    public follow(String word, int count) {
+    public Follow(String word, int count) {
         this.word = word;
         this.count = count;
     }
@@ -22,46 +22,44 @@ public class follow {
     }
 }
 
+import java.util.ArrayList;
+
 class Word {
     private String word;
-    private ArrayList<follow> fields;
+    private ArrayList<Follow> follows;
 
-    public Word(String word, ArrayList<follow> fields) {
+    public Word(String word, ArrayList<Follow> follows) {
         this.word = word;
-        this.fields = fields;
+        this.follows = follows;
     }
 
     public String getWord() {
         return word;
     }
 
-    public ArrayList<follow> getFields() {
-        return fields;
+    public ArrayList<Follow> getFollows() {
+        return follows;
     }
 
     public String toString() {
         String result = word + "\n";
-        for (follow follow : fields) {
+        for (Follow follow : follows) {
             result += "\t" + follow + "\n";
         }
         return result;
     }
 
-    public follow findFollow(String str) {
-        for (follow f : fields) {
+    public Follow findFollow(String str) {
+        for (Follow f : follows) {
             if (f.getWord().equals(str)) {
                 return f;
             }
         }
         return null;
     }
-
-    public void printModel() {
-        for (Word word : words) {
-            System.out.println(word);
-        }
-    }
 }
+
+
 
 
 

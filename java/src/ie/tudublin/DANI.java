@@ -16,6 +16,7 @@ public class DANI extends PApplet {
 
     public void setup() {
         colorMode(HSB);
+		loadFile();
     }
 
     public void keyPressed() {
@@ -63,7 +64,7 @@ public class DANI extends PApplet {
 
     public void loadFile(String filename) {
         // Load text file into a String array
-        String[] lines = loadStrings(filename);
+        String[] lines = loadStrings("small.txt");
 
         // Iterate over each line
         for (String line : lines) {
@@ -82,10 +83,12 @@ public class DANI extends PApplet {
 		model = new Model();
         DANI dani = new DANI();
 
-		private class Model {
-			// Define methods getNextWords() and getWordCount() here
-		}
+		
     }
+}
+
+private class Model {
+	// Define methods getNextWords() and getWordCount() here
 }
 
 
