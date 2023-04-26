@@ -23,7 +23,8 @@ public class DANI extends PApplet {
 	public void setup() {
 		colorMode(HSB);
 
-       
+		
+		
 	}
 
 	public void keyPressed() {
@@ -41,4 +42,33 @@ public class DANI extends PApplet {
         textAlign(CENTER, CENTER);
         
 	}
+
+	public void loadFile(String filename) {
+		// Load text file into a String array
+		String[] lines = loadStrings("small.txt");
+		
+		// Iterate over each line
+		for (String line : lines) {
+			// Split line into array of words
+			String[] words = split(line, ' ');
+			
+			// Iterate over each word
+			for (String word : words) {
+				// Remove punctuation characters and convert to lowercase
+				String s = word.replaceAll("[^\\w\\s]","").toLowerCase();
+				// Process the clean word
+			}
+		}
+		
+		// Load the file into a DANI object
+		DANI dani = new DANI();
+	
+	}
+
+	// write a method called findWord(str) that finds a word in the model so you can check if it already exists
+	public boolean findWord(String str)
+	{
+		return false;
+	}
+
 }
