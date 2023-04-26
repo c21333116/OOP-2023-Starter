@@ -22,7 +22,7 @@ public class Follow {
     }
 }
 
-import java.util.ArrayList;
+
 
 class Word {
     private String word;

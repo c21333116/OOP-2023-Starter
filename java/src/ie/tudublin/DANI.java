@@ -64,7 +64,7 @@ public class DANI extends PApplet {
 
     public void loadFile(String filename) {
         // Load text file into a String array
-        String[] lines = loadStrings("small.txt");
+        String[] lines = loadStrings(filename);
 
         // Iterate over each line
         for (String line : lines) {
@@ -88,7 +88,70 @@ public class DANI extends PApplet {
 }
 
 private class Model {
-	// Define methods getNextWords() and getWordCount() here
+	private ArrayList<Word> words;
+
+	public Model() {
+		words = new ArrayList<Word>();
+	}
+
+	public void addWord(String word) {
+		Word w = findWord(word);
+		if (w == null) {
+			w = new Word(word, new ArrayList<follow>());
+			words.add(w);
+		}
+	}
+
+	public void addFollow(String word, String follow) {
+		Word w = findWord(word);
+		if (w == null) {
+			w = new Word(word, new ArrayList<follow>());
+			words.add(w);
+		}
+		follow f = w.findFollow(follow);
+		if (f == null) {
+			f = new follow(follow, 1);
+			w.getFields().add(f);
+		} else {
+			f.setCount(f.getCount() + 1);
+		}
+	}
+
+	public Word findWord(String str) {
+		for (Word w : words) {
+			if (w.getWord().equals(str)) {
+				return w;
+			}
+		}
+		return null;
+	}
+
+	public String getWord(int index) {
+		return words.get(index).getWord();
+	}
+
+	public int getWordCount() {
+		return words.size();
+	}
+
+	public List<String> getNextWords(String word) {
+		Word w);
+		if (w == null) {
+			return new ArrayList<String>();
+		}
+		ArrayList<String> nextWords = new ArrayList<String>();
+		for (follow f : w.getFields()) {
+			for (int i = 0; i < f.getCount(); i++) {
+				
+		}
+		return nextWords;
+	}
+
+	public void printModel() {
+		for (Word word : words) {
+			System.out.println(word);
+		}
+	}
 }
 
 
