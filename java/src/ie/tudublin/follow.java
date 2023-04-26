@@ -29,6 +29,11 @@ class Word{
     private String word;
     private ArrayList<follow> fields = new ArrayList<follow>();
 
+    public Word(String word, ArrayList<follow> fields){
+        this.word = word;
+        this.fields = fields;
+    }
+
     public String getWord(){
         return word;
     }
@@ -37,14 +42,18 @@ class Word{
         return fields;
     }
 
+  
+
+
+
     public String toString() {
-        StringBuilder ss = new StringBuilder();
-        ss.append(word).append("\n");
-        for (follow fields : fields) {
-            ss.append("\t").append(fields).append("\n");
+        String result = word + "\n";
+        for (follow follow: fields) {
+            result += "\t" + follow + "\n";
         }
-        return ss.toString();
+        return result;
     }
+    
 
     // write a method called findFollow(str) on the Word class You can make these methods return null if there is no match.
     public follow findFollow(String str){
@@ -56,11 +65,15 @@ class Word{
         return null;
     }
 
-    public void printModel(){
+
+
+    public void printModel(loadStrings){
         
-        
+        return null;
 
     }
+
+
 }
 
 
