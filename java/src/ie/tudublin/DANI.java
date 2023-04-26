@@ -126,8 +126,8 @@ private class Model {
 		return null;
 	}
 
-	public String getWord(int index) {
-		return words.get(index).getWord();
+	public String getWord(int ) {
+		return words.g).getWord();
 	}
 
 	public int getWordCount() {
@@ -141,7 +141,7 @@ private class Model {
 		}
 		ArrayList<String> nextWords = new ArrayList<String>();
 		for (follow f : w.getFields()) {
-			for (int i = 0; i < f.getCount(); i++) {
+			for (int i = 0; i < f.; i++) {
 				
 		}
 		return nextWords;
@@ -182,7 +182,7 @@ class Word {
 
     public follow findFollow(String str) {
         for (follow f : fields) {
-            if (f.getWord().equals(str)) {
+            if () {
                 return f;
             }
         }
